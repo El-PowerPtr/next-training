@@ -18,6 +18,6 @@ model Nigga{
   id Int @id @default(autoincrement())
   name String
   age Int
-  phone String @db.VarChar(20)
+  phone String[] @db.VarChar(20)
 }
 
