@@ -6,23 +6,23 @@ const prisma = new PrismaClient();
 export async function POST(request: NextRequest){
     try {
         const json = await request.json()
-        const name_: string = json['name']
-        const age_ : number = json['age']
-        const phone_: string = json['phone']
-        const cell_ : string = json['cell']
+        const name: string = json['name']
+        const age : number = json['age']
+        const phone: string = json['phone']
+        const cell : string = json['cell']
 
         await prisma.nigga.create({data: {
-            name: name_,
-            age: age_,
-            phone: [phone_, cell_]
+            name: name,
+            age: age,
+            phone: [phone, cell]
         }});
 
         await prisma.$disconnect()
 
-        return NextResponse.json({name: name_,
-            age: age_,
-            phone: phone_,
-            cell: cell_},
+        return NextResponse.json({name: name,
+            age: age,
+            phone: phone,
+            cell: cell},
             {status: 201});
 
     } catch (error) {
