@@ -6,7 +6,7 @@ const cache = 'force-no-cache'
 const dynamic = 'force-dynamic'
 const prisma = new PrismaClient()
 
-export default async function name({ name, age, phone, cell }: Nigga): Promise<boolean> {
+export default async function saveNigga({ name, age, phone, cell }: Nigga): Promise<boolean> {
         try {
             await prisma.nigga.create({data: {
                 name: name,

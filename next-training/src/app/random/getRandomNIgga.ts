@@ -17,7 +17,12 @@ export default async function getRandomNigga(): Promise<Nigga|null> {
         prisma.$disconnect()
 
         if (result)
-            return new Nigga(result.name, result.age, result.phone[0], result.phone[1])
+            return {
+                "name": result.name, 
+                "age": result.age, 
+                "phone": result.phone[0],
+                "cell": result.phone[1]
+            }
         else 
             return null
 
